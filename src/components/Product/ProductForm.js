@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import styles from './ProductForm.module.css'
+import Button from '../UI/Button'
 
 function ProductForm(props) {
   const {addProduct} = props
@@ -34,7 +35,9 @@ function ProductForm(props) {
                 onChange={(e) => inputChangeHandle(e, 'price')}
             />
           </label>
-          <button type="submit">Enter</button>
+          <Button type="submit" title="Submit">
+            Enter
+          </Button>
         </form>
       </div>
   )
