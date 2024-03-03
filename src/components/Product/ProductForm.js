@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import styles from './ProductForm.module.css'
+// import styles from './ProductForm.module.css'
 import Button from '../UI/Button'
 
 function ProductForm(props) {
@@ -15,7 +15,7 @@ function ProductForm(props) {
     setData({...data, [name]: text.target.value})
   }
   return (
-      <div className={styles.productFormContainer}>
+      <div className="app-block product-form">
         <form onSubmit={onSubmitHandler}>
           <label>
             Product:

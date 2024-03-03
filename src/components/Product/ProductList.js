@@ -1,11 +1,12 @@
 import Product from './Product'
-import styles from './ProductList.module.css'
+
+// import styles from './ProductList.module.css'
 
 function ProductList(props) {
   const {products, deleteProduct, toggleProduct} = props
   console.log(products)
   return (
-      <div className={styles.productListContainer}>
+      <div className="app-block product-list">
         {!products.length && <h2>List is empty</h2>}
         {products.map((product) => (
             <Product

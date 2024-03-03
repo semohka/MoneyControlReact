@@ -16,3 +16,53 @@
     border: none;
     border-radius: 5px;
 }
+
+/*  */
+.product-form {
+    width: 100%;
+}
+
+.product-form label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-form input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.product-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-form button:hover {
+    background-color: #0056b3;
+}
+
+.product-form .spinner {
+    animation: spinner 1s infinite linear;
+    margin-left: 10px;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
