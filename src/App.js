@@ -66,7 +66,7 @@ function App() {
 
   return (
       <BrowserRouter>
-        <div className="App">
+        <div className="app">
           <Routes>
             <Route path="/" element={<MainLayout/>}>
               <Route index={true} element={<Home/>}/>
@@ -85,7 +85,7 @@ function App() {
           <ShopList shops={shops}/>
           <div className="app-main">
             <div className="app-left-column">
-              <h1>Name product</h1>
+              {/* <h1>Name product</h1> */}
               <ProductForm addProduct={addProductHandler}/>
               {!!products.length && (
                   <ProductsActions
@@ -98,9 +98,9 @@ function App() {
             <div className="app-right-column">
               <Filter/>
               <ProductList
-                  products={products}
-                  deleteProduct={deleteProductHandler}
-                  toggleProduct={toggleProductHandler}
+                  // products={products}
+                  // deleteProduct={deleteProductHandler}
+                  // toggleProduct={toggleProductHandler}
               />
               {completedProductsCount > 0 && (
                   <h2>{`you have completed ${completedProductsCount} ${

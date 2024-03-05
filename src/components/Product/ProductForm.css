@@ -1,4 +1,4 @@
-.productFormContainer {
+/* .productFormContainer {
     margin-bottom: 30px;
 }
 
@@ -15,7 +15,7 @@
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-}
+} */
 
 /*  */
 .product-form {
@@ -23,6 +23,7 @@
 }
 
 .product-form label {
+    color: rgb(6, 70, 70);
     display: block;
     width: 100%;
     text-align: center;
