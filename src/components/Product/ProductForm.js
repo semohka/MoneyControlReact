@@ -2,25 +2,37 @@ import {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {addProducts} from '../../redux/products/actionCreators'
 import './ProductForm.css'
-// import styles from './ProductForm.module.css'
-// import Button from '../UI/Button'
 
-function ProductForm(props) {
-  const {addProduct} = props
-  const [data, setData] = useState({product: '', price: ''})
+const ProductForm = () => {
+  // const {addProduct} = props
+  // const [data, setData] = useState({ product: '', price: '' })
+
+  const [title, setTitle] = useState('')
+  const [price, setPrice] = useState('')
+
   const dispatch = useDispatch()
+
   const onSubmitHandler = (event) => {
     event.preventDefault()
-    addProduct(data)
+    // addProduct(data)
     // alert(JSON.stringify(data))
-    const prod = data
-    console.log(addProducts(prod))
-    dispatch(addProducts(prod))
-    setData({product: '', price: ''})
+    if (title && price) {
+      const product = {
+        product: title,
+        price: price,
+      }
+      console.log(addProducts(product))
+      dispatch(addProducts(product))
+      setTitle('')
+      setPrice('')
+    }
+    // const prod = data
+    // dispatch(addProducts(prod))
+    // setData({ product: '', price: '' })
   }
-  const inputChangeHandle = (text, name) => {
-    setData({...data, [name]: text.target.value})
-  }
+  // const inputChangeHandle = (text, name) => {
+  //   setData({ ...data, [name]: text.target.value })
+  // }
   return (
       <div className="app-block product-form">
         <form onSubmit={onSubmitHandler}>
@@ -29,8 +41,9 @@ function ProductForm(props) {
             <input
                 type="text"
                 placeholder="Enter new product"
-                value={data.product}
-                onChange={(e) => inputChangeHandle(e, 'product')}
+                value={title}
+                // onChange={(e) => inputChangeHandle(e, 'product')}
+                onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div>
@@ -38,8 +51,9 @@ function ProductForm(props) {
             <input
                 type="text"
                 placeholder="Enter price"
-                value={data.price}
-                onChange={(e) => inputChangeHandle(e, 'price')}
+                value={price}
+                // onChange={(e) => inputChangeHandle(e, 'price')}
+                onChange={(e) => setPrice(e.target.value)}
             />
           </div>
 

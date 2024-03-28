@@ -1,23 +1,27 @@
 // import Product from './Product'
 
 import {useSelector} from 'react-redux'
-import './ProductList.module.css'
+import './ProductList.css'
 
 const ProductList = () => {
-    const products = useSelector((state) => state.products)
-    console.log(products)
-    console.log(useSelector)
+    const products = useSelector((state) => state.product)
+
     return (
         <div className="app-block product-list">
             <h2>Product</h2>
-
-            <ul>
-                {/* {products.map((product, i) => (
-          <li key={i}>
-            <div className="product-info">{product}</div>
-          </li>
-        ))} */}
-            </ul>
+            {products.length === 0 ? (
+                <p>No products</p>
+            ) : (
+                <ul>
+                    {products.map((product, i) => (
+                        <li key={i}>
+                            <div className="product-info">
+                                {product.product} {product.price}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     )
     // const { products, deleteProduct, toggleProduct } = props
